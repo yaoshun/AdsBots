@@ -12,16 +12,26 @@ colortwo=`./get_pixel 342 433 2`
 echo "color: $colorone $colortwo"
 
 # Default value
-colorcase=3
+colorcase=4
 
 if [ $colorone -eq 255 ] && [ $colortwo -eq 255 ]
 then
     colorcase=1
 fi
 
+if [ $colorone -eq 0 ]
+then
+    colorcase=3
+fi
+
 if [ $colorone -eq 0 ] && [ $colortwo -eq 195 ]
 then
     colorcase=2
+fi
+
+if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=5
 fi
 
 echo "classification: $colorcase"
@@ -165,9 +175,42 @@ case $colorcase in
     exit
 ;;
 
-# Non-Click Case Bot
+# Two Click Case Bot
 3)
+    sleep 4
+    xte 'mousemove 498 360'
+    xte 'mouseclick 1'
+    sleep 2
+    xte 'mousemove 498 360'
+    xte 'mouseclick 1'
     sleep 120 
+    xte 'keydown Control_L'
+    xte 'key w'
+    xte 'keyup Control_L'
+    sleep 2
+    exit
+;;
+
+
+# Non-Click Case Bot
+4)
+    sleep 120 
+    xte 'keydown Control_L'
+    xte 'key w'
+    xte 'keyup Control_L'
+    sleep 2
+    exit
+;;
+
+# Special Lays case
+5)
+    xte 'mousemove 416 592'
+    xte 'mouseclick 1'
+    sleep 12
+    xte 'keydown Control_L'
+    xte 'key w'
+    xte 'keyup Control_L'
+    sleep 2
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
