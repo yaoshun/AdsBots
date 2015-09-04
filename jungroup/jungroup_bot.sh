@@ -92,7 +92,7 @@ case $colorcase in
                 xte 'keyup Alt_L'
                 sleep 5
             fi
-            if [ "$color" -eq 255 ] || [ "$color" -eq 71 ] || [ "$color" -eq 151 ] || [ "$color" -eq 7 ]
+            if [ "$color" -eq 255 ] || [ "$color" -eq 71 ] || [ "$color" -eq 168 ] || [ "$color" -eq 7 ]
             then
                 xte 'keydown Alt_L'
                 xte 'key Tab'
