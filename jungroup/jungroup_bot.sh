@@ -29,6 +29,11 @@ then
     colorcase=2
 fi
 
+if [ $colorone -eq 0 ] && [ $colortwo -eq 2 ]
+then
+    colorcase=2
+fi
+
 if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
 then
     colorcase=5
@@ -163,7 +168,7 @@ case $colorcase in
 2)
     xte 'mousemove 528 350'
     xte 'mouseclick 1'
-    sleep 70
+    sleep 80
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
