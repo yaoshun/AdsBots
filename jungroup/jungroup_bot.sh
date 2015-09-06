@@ -24,15 +24,15 @@ then
     colorcase=3
 fi
 
-if [ $colorone -eq 0 ] && [ $colortwo -eq 195 ]
-then
-    colorcase=2
-fi
+#if [ $colorone -eq 0 ] && [ $colortwo -eq 195 ]
+#then
+#    colorcase=2
+#fi
 
-if [ $colorone -eq 0 ] && [ $colortwo -eq 2 ]
-then
-    colorcase=2
-fi
+#if [ $colorone -eq 0 ] && [ $colortwo -eq 2 ]
+#then
+#    colorcase=2
+#fi
 
 if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
 then
