@@ -211,7 +211,7 @@ case $colorcase in
 5)
     xte 'mousemove 416 592'
     xte 'mouseclick 1'
-    sleep 12
+    sleep 70 
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
