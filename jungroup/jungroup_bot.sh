@@ -24,20 +24,10 @@ then
     colorcase=3
 fi
 
-#if [ $colorone -eq 0 ] && [ $colortwo -eq 195 ]
+#if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
 #then
-#    colorcase=2
+#    colorcase=5
 #fi
-
-#if [ $colorone -eq 0 ] && [ $colortwo -eq 2 ]
-#then
-#    colorcase=2
-#fi
-
-if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
-then
-    colorcase=5
-fi
 
 echo "classification: $colorcase"
 
@@ -185,10 +175,20 @@ case $colorcase in
     sleep 4
     xte 'mousemove 498 360'
     xte 'mouseclick 1'
-    sleep 2
+    sleep 5 
+    testcolor=`./get_pixel 248 109 2`
+    if [ $testcolor -eq 0 ]
+    then
+        echo "Added an click here"
+        xte 'mousemove 498 360'
+        xte 'mouseclick 1'
+        sleep 5
+    fi
     xte 'mousemove 498 360'
-    xte 'mouseclick 1'
-    sleep 120 
+    xte 'mouseclick 1' 
+    sleep 10
+    
+    sleep 180
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
