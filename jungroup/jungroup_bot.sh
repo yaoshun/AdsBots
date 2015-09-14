@@ -24,10 +24,10 @@ then
     colorcase=3
 fi
 
-#if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
-#then
-#    colorcase=5
-#fi
+if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=5
+fi
 
 echo "classification: $colorcase"
 
