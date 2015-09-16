@@ -199,7 +199,7 @@ case $colorcase in
 
 # Non-Click Case Bot
 4)
-    sleep 120 
+    sleep 240 
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
