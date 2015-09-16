@@ -1,0 +1,56 @@
+#!/bin/bash
+
+sleep 5
+xte 'keydown Control_L'
+xte 'key r'
+xte 'keyup Control_L'
+
+sleep 5 
+
+google-chrome "http://player.ngage-media.com/s/?u=546cc19e84b76822870741db&f=3&s=" &
+#google-chrome "http://player.ngage-media.com/s/?u=546cc19e84b76822870741db&f=2&s=" &
+
+sleep 6
+
+xte 'mousemove 420 619'
+xte 'mouseclick 1'
+
+sleep 6 
+xte 'keydown Alt_L'
+xte 'key Tab'
+xte 'keyup Alt_L'
+sleep 2
+
+while [ 1 -le 5 ]
+do
+    sleep 1
+    color=`./get_pixel 410 298 1`
+    #echo "finish color $color"
+    if [ "$color" -eq 211 ]
+    then
+        xte 'mousemove 410 298'
+        xte 'mouseclick 1'
+        sleep 2
+        xte 'keydown Alt_L'
+        xte 'key Tab'
+        xte 'keyup Alt_L'
+        sleep 5
+    fi
+    if [ "$color" -eq 255 ]
+    then
+        xte 'keydown Alt_L'
+        xte 'key Tab'
+        xte 'keyup Alt_L'
+        sleep 2
+        xte 'keydown Control_L'
+        xte 'key w'
+        xte 'keyup Control_L'
+        sleep 2
+        xte 'keydown Control_L'
+        xte 'key w'
+        xte 'keyup Control_L'
+        sleep 2
+        exit
+    fi
+done
+
