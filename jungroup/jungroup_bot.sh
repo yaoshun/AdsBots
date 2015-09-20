@@ -41,7 +41,7 @@ case $colorcase in
 
     # Find the Green line
     # Totally three cases
-    x=780
+    x=792
 
     for y in `seq 180 367`
     do
@@ -132,7 +132,7 @@ case $colorcase in
          fi
 
         sleep 1
-        finishcolor=`./get_pixel 970 $y 0`
+        finishcolor=`./get_pixel 972 $y 0`
         color=`./get_pixel $x $y 0`
         if [ "$color" -eq 59 ] || [ "$color" -eq 60 ] || [ "$color" -eq 61 ]
         then
