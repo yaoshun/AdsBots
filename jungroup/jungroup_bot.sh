@@ -14,6 +14,11 @@ echo "color: $colorone $colortwo"
 # Default value
 colorcase=4
 
+if [ $colorone -eq 255 ]
+then
+    colorcase=3
+fi
+
 if [ $colorone -eq 255 ] && [ $colortwo -eq 255 ]
 then
     colorcase=1
