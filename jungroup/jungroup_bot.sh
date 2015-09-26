@@ -24,6 +24,11 @@ then
     colorcase=1
 fi
 
+if [ $colorone -eq 15 ] && [ $colortwo -eq 140 ]
+then
+    colorcase=3
+fi
+
 if [ $colorone -eq 0 ]
 then
     colorcase=3
