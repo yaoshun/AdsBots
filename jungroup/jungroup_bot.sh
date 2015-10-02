@@ -12,7 +12,7 @@ colortwo=`./get_pixel 342 433 2`
 echo "color: $colorone $colortwo"
 
 # Default value
-colorcase=4
+colorcase=3
 
 if [ $colorone -eq 255 ]
 then
@@ -20,6 +20,16 @@ then
 fi
 
 if [ $colorone -eq 255 ] && [ $colortwo -eq 255 ]
+then
+    colorcase=1
+fi
+
+if [ $colorone -eq 255 ] && [ $colortwo -eq 31 ]
+then
+    colorcase=1
+fi
+
+if [ $colorone -eq 255 ] && [ $colortwo -eq 66 ]
 then
     colorcase=1
 fi
