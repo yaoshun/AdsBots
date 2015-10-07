@@ -24,15 +24,22 @@ then
     colorcase=1
 fi
 
+# Beginning of the 5 min case.
 if [ $colorone -eq 255 ] && [ $colortwo -eq 31 ]
 then
-    colorcase=1
+    colorcase=5
 fi
 
 if [ $colorone -eq 255 ] && [ $colortwo -eq 66 ]
 then
-    colorcase=1
+    colorcase=5
 fi
+
+if [ $colorone -eq 255 ] && [ $colortwo -eq 48 ]
+then
+    colorcase=5
+fi
+# Ending of the 5 min case.
 
 if [ $colorone -eq 15 ] && [ $colortwo -eq 140 ]
 then
@@ -42,11 +49,6 @@ fi
 if [ $colorone -eq 0 ]
 then
     colorcase=3
-fi
-
-if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
-then
-    colorcase=5
 fi
 
 echo "classification: $colorcase"
@@ -231,7 +233,7 @@ case $colorcase in
 5)
     xte 'mousemove 416 592'
     xte 'mouseclick 1'
-    sleep 70 
+    sleep 350 
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
