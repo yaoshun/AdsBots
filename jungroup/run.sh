@@ -8,6 +8,7 @@ do
     #./gifthulk_jungroup.sh
     #./irazoo_jungroup.sh
     #./swagbucks_jungroup.sh
-    ./inboxdollars_jungroup.sh
+    #./inboxdollars_jungroup.sh
     #./sendearnings_jungroup.sh
+    ./radioloyalty_jungroup.sh
 done
