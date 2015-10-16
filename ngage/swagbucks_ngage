@@ -24,11 +24,11 @@ sleep 2
 while [ 1 -le 5 ]
 do
     sleep 1
-    color=`./get_pixel 410 298 1`
+    color=`./get_pixel 410 290 1`
     #echo "finish color $color"
     if [ "$color" -eq 211 ]
     then
-        xte 'mousemove 410 298'
+        xte 'mousemove 410 290'
         xte 'mouseclick 1'
         sleep 2
         xte 'keydown Alt_L'
