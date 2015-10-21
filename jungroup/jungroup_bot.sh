@@ -229,7 +229,7 @@ case $colorcase in
     exit
 ;;
 
-# Special Lays case
+# Special 5 min case. 
 5)
     xte 'mousemove 416 592'
     xte 'mouseclick 1'
