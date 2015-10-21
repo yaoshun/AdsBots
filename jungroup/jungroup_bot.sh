@@ -199,7 +199,7 @@ case $colorcase in
     xte 'mouseclick 1'
     sleep 5 
     testcolor=`./get_pixel 248 109 2`
-    if [ $testcolor -eq 0 ]
+    if [ $testcolor -eq 0 ] || [ $testcolor -eq 247 ]
     then
         echo "Added an click here"
         xte 'mousemove 498 360'
