@@ -51,6 +51,11 @@ then
     colorcase=3
 fi
 
+if [ $colorone -eq 0 ] && [ $colortwo -eq 255 ]
+then
+    colorcase=6
+fi
+
 echo "classification: $colorcase"
 
 # BOTS RUNNING 
@@ -244,6 +249,50 @@ case $colorcase in
     xte 'keyup Control_L'
     sleep 2
     exit
+;;
+
+# Special alt tab case
+6)
+    xte 'mousemove 428 560'
+    xte 'mouseclick 1'
+    sleep 4 
+    xte 'keydown Alt_L'
+    xte 'key Tab'
+    xte 'keyup Alt_L'
+    sleep 2
+
+    while [ 1 -le 5 ]
+    do
+        sleep 1
+        color=`./get_pixel 456 453 2`
+        #echo "finish color $color"
+        if [ "$color" -eq 0 ]
+        then
+            xte 'mousemove 456 453'
+            xte 'mouseclick 1'
+            sleep 2
+            xte 'keydown Alt_L'
+            xte 'key Tab'
+            xte 'keyup Alt_L'
+            sleep 5
+        fi
+        if [ "$color" -eq 255 ] || [ "$color" -eq 71 ] || [ "$color" -eq 168 ] || [ "$color" -eq 7 ]
+        then
+            xte 'keydown Alt_L'
+            xte 'key Tab'
+            xte 'keyup Alt_L'
+            sleep 2
+            xte 'keydown Control_L'
+            xte 'key w'
+            xte 'keyup Control_L'
+            sleep 2
+            xte 'keydown Control_L'
+            xte 'key w'
+            xte 'keyup Control_L'
+            sleep 2
+            exit
+        fi
+    done
 ;;
 esac 
 
