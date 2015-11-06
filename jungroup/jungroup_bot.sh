@@ -24,6 +24,11 @@ then
     colorcase=1
 fi
 
+if [ $colorone -eq 255 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=1
+fi
+
 # Beginning of the 5 min case.
 if [ $colorone -eq 255 ] && [ $colortwo -eq 31 ]
 then
@@ -64,6 +69,8 @@ case $colorcase in
     xte 'mousemove 369 494'
     xte 'mouseclick 1'
 
+    xte 'mousemove 369 450'
+    xte 'mouseclick 1'
     sleep 10
 
     # Find the Green line
