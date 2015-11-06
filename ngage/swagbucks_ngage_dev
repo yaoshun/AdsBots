@@ -83,14 +83,14 @@ case $colorcase in
         sleep 1
         color=`./get_pixel 334 179 0`
         echo "currentcolor: $color"
-        if [ "$color" -eq 0 ]
+        if [ $color -eq 0 ] || [ $color -eq 59 ] || [ $color -eq 254 ] || [ $color -eq 255 ]
         then
             xte 'mousemove 334 179'
             xte 'mouseclick 1'
             sleep 3 
         fi
 
-        if [ "$color" -eq 75 ]
+        if [ $color -eq 75 ]
         then
             xte 'mousemove 334 179'
             xte 'mouseclick 1'
