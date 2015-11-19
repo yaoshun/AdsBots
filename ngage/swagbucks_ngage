@@ -33,6 +33,14 @@ case $colorcase in
     xte 'mouseclick 1'
     
     sleep 6 
+
+    xte 'keydown Control_L' 'keydown Super_L' 
+    sleep 2
+    xte 'key Up'
+    sleep 2
+    xte 'keyup Control_L' 'keyup Super_L'
+    sleep 2
+
     xte 'keydown Alt_L'
     xte 'key Tab'
     xte 'keyup Alt_L'
@@ -76,7 +84,15 @@ case $colorcase in
     xte 'mousemove 420 619'
     xte 'mouseclick 1'
 
-    sleep 10
+    sleep 6
+    xte 'keydown Control_L' 'keydown Super_L' 
+    sleep 2
+    xte 'key Up'
+    sleep 2
+    xte 'keyup Control_L' 'keyup Super_L'
+    sleep 2
+
+    sleep 4
 
     while [ 1 -le 5 ]
     do
