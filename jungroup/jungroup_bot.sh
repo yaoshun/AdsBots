@@ -6,59 +6,17 @@ sleep 5
 # We will try to distinguish by checking colors at different places.
 
 # CLASSIFICATION 
-colorone=`./get_pixel 345 563 2`
-colortwo=`./get_pixel 342 433 2`
+colorone=`./get_pixel 320 300 0`
+colortwo=`./get_pixel 280 470 2`
 
 echo "color: $colorone $colortwo"
 
 # Default value
 colorcase=3
 
-if [ $colorone -eq 255 ]
-then
-    colorcase=3
-fi
-
-if [ $colorone -eq 255 ] && [ $colortwo -eq 255 ]
+if [ $colorone -eq 27 ] && [ $colortwo -eq 0 ]
 then
     colorcase=1
-fi
-
-if [ $colorone -eq 255 ] && [ $colortwo -eq 0 ]
-then
-    colorcase=1
-fi
-
-# Beginning of the 5 min case.
-if [ $colorone -eq 255 ] && [ $colortwo -eq 31 ]
-then
-    colorcase=5
-fi
-
-if [ $colorone -eq 255 ] && [ $colortwo -eq 66 ]
-then
-    colorcase=5
-fi
-
-if [ $colorone -eq 255 ] && [ $colortwo -eq 48 ]
-then
-    colorcase=5
-fi
-# Ending of the 5 min case.
-
-if [ $colorone -eq 15 ] && [ $colortwo -eq 140 ]
-then
-    colorcase=3
-fi
-
-if [ $colorone -eq 0 ]
-then
-    colorcase=3
-fi
-
-if [ $colorone -eq 0 ] && [ $colortwo -eq 255 ]
-then
-    colorcase=6
 fi
 
 echo "classification: $colorcase"
