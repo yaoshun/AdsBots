@@ -12,9 +12,14 @@ colortwo=`./get_pixel 280 470 2`
 echo "color: $colorone $colortwo"
 
 # Default value
-colorcase=3
+colorcase=4
 
 if [ $colorone -eq 27 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=1
+fi
+
+if [ $colorone -eq 241 ] && [ $colortwo -eq 64 ]
 then
     colorcase=1
 fi
@@ -192,7 +197,7 @@ case $colorcase in
 
 # Non-Click Case Bot
 4)
-    sleep 240 
+    sleep 120 
     xte 'keydown Control_L'
     xte 'key w'
     xte 'keyup Control_L'
