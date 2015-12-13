@@ -12,16 +12,21 @@ colortwo=`./get_pixel 280 470 2`
 echo "color: $colorone $colortwo"
 
 # Default value
-colorcase=1
+colorcase=4
 
 if [ $colorone -eq 27 ] && [ $colortwo -eq 0 ]
 then
     colorcase=1
 fi
 
-if [ $colorone -eq 241 ] && [ $colortwo -eq 64 ]
+if [ $colorone -eq 248 ] && [ $colortwo -eq 133 ]
 then
     colorcase=1
+fi
+
+if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=3
 fi
 
 echo "classification: $colorcase"
