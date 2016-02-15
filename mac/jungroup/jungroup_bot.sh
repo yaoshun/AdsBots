@@ -12,11 +12,21 @@ colortwo=`./get_pixel 280 470 2`
 echo "color: $colorone $colortwo"
 
 # Default value
-colorcase=1
+colorcase=4
 
 if [ $colorone -eq 27 ] && [ $colortwo -eq 0 ]
 then
     colorcase=1
+fi
+
+if [ $colorone -eq 248 ] && [ $colortwo -eq 133 ]
+then
+    colorcase=1
+fi
+
+if [ $colorone -eq 0 ] && [ $colortwo -eq 0 ]
+then
+    colorcase=3
 fi
 
 echo "classification: $colorcase"
@@ -30,6 +40,13 @@ case $colorcase in
     xte 'mousemove 369 450'
     xte 'mouseclick 1'
     sleep 10
+
+    xte 'keydown Control_L' 'keydown Super_L'
+    sleep 2
+    xte 'key Up'
+    sleep 2
+    xte 'keyup Control_L' 'keyup Super_L'
+    sleep 2
 
     # Find the Green line
     # Totally three cases
