@@ -85,18 +85,18 @@ case $colorcase in
     while [ 1 -le 5 ]
     do
         sleep 1
-        color=`./get_pixel 290 192 0`
+        color=`./get_pixel 275 192 0`
         echo "currentcolor: $color"
-        if [ $color -eq 0 ]
+        if [ $color -eq 0 ] || [ $color -eq 211 ]
         then
-            xte 'mousemove 290 192'
+            xte 'mousemove 275 192'
             xte 'mouseclick 1'
             sleep 3 
         fi
 
         if [ $color -eq 75 ]
         then
-            xte 'mousemove 290 192'
+            xte 'mousemove 275 192'
             xte 'mouseclick 1'
             sleep 5 
             xte 'keydown Control_L'
